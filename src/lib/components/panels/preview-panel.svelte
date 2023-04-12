@@ -58,12 +58,12 @@
   </button>
 
   <ChatContainer>
+    <Superchat />
     <RegularMessage />
     <RegularMessage authorType="owner" />
     <RegularMessage authorType="moderator" />
     <RegularMessage authorType="member" />
     <Sponsor />
-    <Superchat />
   </ChatContainer>
 </section>
 

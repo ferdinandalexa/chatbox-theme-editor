@@ -49,6 +49,14 @@ sponsorStyles.set({
   detailColor: "#ffffff",
 })
 
+const animationStyles = createStyleStore()
+animationStyles.set({
+  type: "slide",
+  animationTime: 300,
+  keepOnChat: 3000,
+  outEnabled: false,
+})
+
 const storeKeys = {
   general: Symbol('general'),
   regularMessage: Symbol('regularMessage'),
@@ -58,4 +66,5 @@ const storeKeys = {
   animation: Symbol('animation')
 }
 
-export { generalStyles, regularMessageStyles, sponsorStyles, storeKeys }
+
+export { generalStyles, regularMessageStyles, sponsorStyles, animationStyles, storeKeys }

@@ -1,4 +1,20 @@
-<yt-live-chat-paid-message-renderer style="color: #fff">
+<script>
+  import { getContext } from "svelte";
+  import { storeKeys } from "$lib/stores/chat-styles";
+
+  import { animate } from "$lib/actions/animate";
+
+  const animation = getContext(storeKeys.animation);
+
+  $: duration =
+    parseInt($animation.keepOnChat) + parseInt($animation.animationTime) * 2;
+  $: steps = $animation.animationTime / duration;
+</script>
+
+<yt-live-chat-paid-message-renderer
+  use:animate={{ steps, duration }}
+  style="color: #fff"
+>
   <div id="header" style="background-color: rgba(208,0,0,1);">
     <yt-img-shadow id="author-photo">
       <div
@@ -25,6 +41,8 @@
     margin-bottom: var(--g-gap, 2px);
     width: var(--g-messagesWidth, max-content);
     max-width: 100%;
+    animation: var(--a-type) var(--a-duration);
+    animation-fill-mode: both;
 
     font-size: 16px;
   }

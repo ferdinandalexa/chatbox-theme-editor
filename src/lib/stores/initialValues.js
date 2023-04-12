@@ -1,10 +1,11 @@
 import { get } from 'svelte/store';
 
-import { generalStyles, regularMessageStyles, sponsorStyles } from "$lib/stores/chat-styles";
+import { generalStyles, regularMessageStyles, sponsorStyles, animationStyles } from "$lib/stores/chat-styles";
 
 const general = get(generalStyles)
 const regularMessage = get(regularMessageStyles)
 const sponsor = get(sponsorStyles)
+const animation = get(animationStyles)
 
 /** @typedef {import('$lib/types/fields').Fields} Fields */
 
@@ -221,4 +222,40 @@ const superchatFields = [
 const membershipFields = [
 ]
 
-export { generalFields, regularMessageFields, sponsorFields, superchatFields, membershipFields }
+/**@type {Array<Fields>} */
+const animationFields = [
+  {
+    field: "Animation",
+    inputs: [
+      {
+        type: "listbox",
+        label: "Type",
+        props: {
+          options: [
+            'slide',
+            'fade',
+          ]
+        },
+        cssProp: 'type',
+        hasDeps: false,
+        value: animation.type,
+      },
+      {
+        type: "number",
+        label: "Animation time",
+        cssProp: 'animationTime',
+        hasDeps: false,
+        value: animation.animationTime,
+      },
+      {
+        type: "number",
+        label: "Keep on chat",
+        cssProp: 'keepOnChat',
+        hasDeps: false,
+        value: animation.keepOnChat,
+      },
+    ]
+  }
+]
+
+export { generalFields, regularMessageFields, sponsorFields, superchatFields, membershipFields, animationFields }

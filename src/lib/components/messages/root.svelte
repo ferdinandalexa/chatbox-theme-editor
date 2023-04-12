@@ -5,6 +5,7 @@
   const generalStyles = getContext(storeKeys.general);
   const regularMessage = getContext(storeKeys.regularMessage);
   const sponsor = getContext(storeKeys.sponsor);
+  const animation = getContext(storeKeys.animation);
 </script>
 
 <div
@@ -29,6 +30,9 @@
   --sp-background: {$sponsor.background};
   --sp-eventTextColor: {$sponsor.eventColor};
   --sp-detailTextColor: {$sponsor.detailColor};
+  --a-type: {$animation.type};
+  --a-duration: {parseInt($animation.duration) * 2 +
+    parseInt($animation.keepOnChat)}ms;
 "
 >
   <slot />

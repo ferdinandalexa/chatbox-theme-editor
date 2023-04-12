@@ -1,6 +1,7 @@
 <script>
   import { onMount, setContext } from "svelte";
   import {
+    animationStyles,
     generalStyles,
     regularMessageStyles,
     sponsorStyles,
@@ -12,6 +13,7 @@
   setContext(storeKeys.general, generalStyles);
   setContext(storeKeys.regularMessage, regularMessageStyles);
   setContext(storeKeys.sponsor, sponsorStyles);
+  setContext(storeKeys.animation, animationStyles);
 
   onMount(() => {
     Coloris({
