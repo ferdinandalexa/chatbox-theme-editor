@@ -74,7 +74,6 @@
   <ChatContainer>
     {#if chatSimulationEnabled}
       <DynamicChat />
-      <!-- <Superchat /> -->
     {:else}
       <StaticChat />
     {/if}
