@@ -1,7 +1,7 @@
 <script>
-  /** @typedef {import('$lib/types/messages').RegularMessageProps} AuthorType */
+  /** @typedef {import('$lib/types/messages').AUTHOR_TYPES | null } AuthorType */
   /**@type {AuthorType}*/
-  export let authorType;
+  export let authorType = null;
 </script>
 
 <yt-live-chat-text-message-renderer author-type={authorType}>
