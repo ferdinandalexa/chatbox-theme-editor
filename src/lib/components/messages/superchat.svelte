@@ -1,20 +1,4 @@
-<script>
-  import { getContext } from "svelte";
-  import { storeKeys } from "$lib/stores/chat-styles";
-
-  import { animate } from "$lib/actions/animate";
-
-  const animation = getContext(storeKeys.animation);
-
-  $: duration =
-    parseInt($animation.keepOnChat) + parseInt($animation.animationTime) * 2;
-  $: steps = $animation.animationTime / duration;
-</script>
-
-<yt-live-chat-paid-message-renderer
-  use:animate={{ steps, duration }}
-  style="color: #fff"
->
+<yt-live-chat-paid-message-renderer style="color: #fff">
   <div id="header" style="background-color: rgba(208,0,0,1);">
     <yt-img-shadow id="author-photo">
       <div
@@ -31,6 +15,20 @@
     <div id="message" dir="auto">Thanks for all your work, keep it up!</div>
   </div>
 </yt-live-chat-paid-message-renderer>
+
+<!-- {#if isPlay}
+  {@const steps = stepsPercentage}
+  {@const duration = totalDuration}
+{/if} -->
+
+<!-- <button
+  bind:this={button}
+  on:click={() => {
+    handleClick(totalDuration);
+  }}
+>
+  Play animation
+</button> -->
 
 <style>
   yt-live-chat-paid-message-renderer {
