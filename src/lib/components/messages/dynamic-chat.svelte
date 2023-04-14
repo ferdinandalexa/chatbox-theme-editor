@@ -12,7 +12,6 @@
 
   const animation = getContext(storeKeys.animation);
 
-  /**@typedef {import('svelte').SvelteComponent} SvelteComponent*/
   /** @typedef {import('$lib/types/messages').ListTypeMessages} ListTypeMessages */
 
   /** @type {Array<ListTypeMessages>}   */
