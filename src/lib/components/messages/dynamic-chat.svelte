@@ -12,6 +12,10 @@
 
   const animation = getContext(storeKeys.animation);
 
+  /**@typedef {import('svelte').SvelteComponent} SvelteComponent*/
+  /** @typedef {import('$lib/types/messages').ListTypeMessages} ListTypeMessages */
+
+  /** @type {Array<ListTypeMessages>}   */
   const messagesType = [
     {
       component: RegularMessage,
@@ -42,6 +46,7 @@
     },
   ];
 
+  /**@type {Array<ListTypeMessages>}*/
   let listOfMessages = [];
   /** @type {number}*/
   let intervalId;

@@ -2,9 +2,9 @@
   import { getContext } from "svelte";
   import { storeKeys } from "$lib/stores/chat-styles";
 
-  /** @typedef {("owner" | "moderator" | "member") | null } AuthorType */
-  /**@type {AuthorType} [authorType]*/
-  export let authorType = null;
+  /** @typedef {import('$lib/types/messages').RegularMessageProps} AuthorType */
+  /**@type {AuthorType}*/
+  export let authorType;
 </script>
 
 <yt-live-chat-text-message-renderer author-type={authorType}>
