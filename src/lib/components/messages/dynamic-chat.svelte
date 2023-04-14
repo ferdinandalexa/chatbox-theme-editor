@@ -13,6 +13,7 @@
   const animation = getContext(storeKeys.animation);
 
   /** @typedef {import('$lib/types/messages').ListTypeMessages} ListTypeMessages */
+  /** @typedef {import('$lib/types/animations').AnimateProps} AnimateProps */
 
   /** @type {Array<ListTypeMessages>}   */
   const messagesType = [
@@ -44,9 +45,10 @@
       component: Superchat,
     },
   ];
-
   /**@type {Array<ListTypeMessages>}*/
   let listOfMessages = [];
+  /**@type {AnimateProps}*/
+  let animateOpts;
   /** @type {number}*/
   let intervalId;
 
@@ -55,10 +57,22 @@
     listOfMessages = [...listOfMessages, messagesType[randomIndex]];
   }, 3_000);
 
-  $: totalDuration = $animation.hideOldMessages
-    ? parseInt($animation.timeOnChat) + parseInt($animation.animationTime) * 2
-    : parseInt($animation.animationTime) * 2;
-  $: stepsPercentage = $animation.animationTime / totalDuration;
+  $: {
+    let totalDuration = $animation.hideOldMessages
+      ? parseInt($animation.timeOnChat) + parseInt($animation.animationTime) * 2
+      : parseInt($animation.animationTime) * 2;
+
+    let stepsPercentage = $animation.animationTime / totalDuration;
+
+    animateOpts = {
+      duration: totalDuration,
+      steps: stepsPercentage,
+      type: $animation.type,
+      hasOut: $animation.hideOldMessages,
+    };
+
+    listOfMessages = [];
+  }
 
   onDestroy(() => {
     clearInterval(intervalId);
@@ -66,14 +80,7 @@
 </script>
 
 {#each listOfMessages as { component, props }}
-  <div
-    use:animate={{
-      type: $animation.type,
-      steps: stepsPercentage,
-      duration: totalDuration,
-      hasOut: $animation.hideOldMessages,
-    }}
-  >
+  <div use:animate={animateOpts}>
     <svelte:component this={component} {...props} />
   </div>
 {/each}
