@@ -1,10 +1,3 @@
-<script>
-  import { getContext } from "svelte";
-  import { storeKeys } from "$lib/stores/chat-styles";
-
-  const generalStyles = getContext(storeKeys.general);
-</script>
-
 <yt-live-chat-legacy-paid-message-renderer>
   <yt-img-shadow class="author-photo">
     <div

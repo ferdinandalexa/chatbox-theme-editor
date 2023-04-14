@@ -6,9 +6,6 @@
   } from "$lib/stores/chat-styles";
   import { generateChatStyles } from "$lib/utils/generateChatStyles";
   import ChatContainer from "$lib/components/messages/chat-container.svelte";
-  import RegularMessage from "$lib/components/messages/regular-message.svelte";
-  import Sponsor from "$lib/components/messages/sponsor.svelte";
-  import Superchat from "$lib/components/messages/superchat.svelte";
   import DynamicChat from "$lib/components/messages/dynamic-chat.svelte";
   import StaticChat from "../messages/static-chat.svelte";
 

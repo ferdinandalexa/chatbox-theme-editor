@@ -16,20 +16,6 @@
   </div>
 </yt-live-chat-paid-message-renderer>
 
-<!-- {#if isPlay}
-  {@const steps = stepsPercentage}
-  {@const duration = totalDuration}
-{/if} -->
-
-<!-- <button
-  bind:this={button}
-  on:click={() => {
-    handleClick(totalDuration);
-  }}
->
-  Play animation
-</button> -->
-
 <style>
   yt-live-chat-paid-message-renderer {
     display: block;

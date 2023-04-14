@@ -1,7 +1,4 @@
 <script>
-  import { getContext } from "svelte";
-  import { storeKeys } from "$lib/stores/chat-styles";
-
   /** @typedef {import('$lib/types/messages').RegularMessageProps} AuthorType */
   /**@type {AuthorType}*/
   export let authorType;
