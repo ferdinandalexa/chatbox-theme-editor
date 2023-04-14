@@ -6,9 +6,10 @@ import { createAnimateOpts } from "$lib/utils/createAnimateOpts";
  * @param {Object} params
  * @param {number} params.steps
  * @param {number} params.duration
+ * @param {string} params.type
  */
-export const animate = (node, { steps, duration }) => {
-  node.animate(getKeyframes(steps), createAnimateOpts(duration));
+export const animate = (node, { type, steps, duration }) => {
+  node.animate(getKeyframes(type, steps), createAnimateOpts(duration));
   return {
     /**
      * @param {Object} newParams
@@ -16,8 +17,7 @@ export const animate = (node, { steps, duration }) => {
      * @param {number} newParams.duration
      */
     update({ steps, duration }) {
-      console.log(duration);
-      node.animate(getKeyframes(steps), createAnimateOpts(duration));
+      node.animate(getKeyframes(type, steps), createAnimateOpts(duration));
     },
   };
 };

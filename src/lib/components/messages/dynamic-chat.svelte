@@ -65,7 +65,13 @@
 </script>
 
 {#each listOfMessages as { component, props }}
-  <div use:animate={{ steps: stepsPercentage, duration: totalDuration }}>
+  <div
+    use:animate={{
+      type: $animation.type,
+      steps: stepsPercentage,
+      duration: totalDuration,
+    }}
+  >
     <svelte:component this={component} {...props} />
   </div>
 {/each}

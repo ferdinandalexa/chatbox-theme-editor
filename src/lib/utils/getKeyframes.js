@@ -1,30 +1,14 @@
+import { slide } from "$lib/utils/animations/slide";
+import { fade } from "$lib/utils/animations/fade";
+
 /**
+ * @param {string} type
  * @param {number} steps
  * @return {Keyframe[] | PropertyIndexedKeyframes}
  * */
-export function getKeyframes(steps) {
-  const keyframes = [
-    {
-      opacity: 0,
-      transform: "translateX(16px)",
-      offset: 0,
-    },
-    {
-      opacity: 1,
-      transform: "none",
-      offset: steps,
-    },
-    {
-      opacity: 1,
-      transform: "none",
-      offset: 1 - steps,
-    },
-    {
-      opacity: 0,
-      transform: "translateX(-15px)",
-      offset: 1,
-    },
-  ];
+export function getKeyframes(type, steps) {
+  if (type === "slide") return slide(steps)
+  if (type === "fade") return fade(steps)
 
-  return keyframes;
+  return []
 }
