@@ -12,4 +12,4 @@ interface ListTypeMessages {
   props?: RegularMessageProps
 }
 
-export { RegularMessageProps, AUTHOR_TYPES, ListTypeMessages }
+export type { RegularMessageProps, AUTHOR_TYPES, ListTypeMessages }
