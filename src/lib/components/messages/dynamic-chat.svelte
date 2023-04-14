@@ -53,10 +53,11 @@
   intervalId = setInterval(() => {
     const randomIndex = getRandomNumber(0, messagesType.length - 1);
     listOfMessages = [...listOfMessages, messagesType[randomIndex]];
-  }, 2000);
+  }, 3_000);
 
-  $: totalDuration =
-    parseInt($animation.keepOnChat) + parseInt($animation.animationTime) * 2;
+  $: totalDuration = $animation.hideOldMessages
+    ? parseInt($animation.timeOnChat) + parseInt($animation.animationTime) * 2
+    : parseInt($animation.animationTime) * 2;
   $: stepsPercentage = $animation.animationTime / totalDuration;
 
   onDestroy(() => {
@@ -70,6 +71,7 @@
       type: $animation.type,
       steps: stepsPercentage,
       duration: totalDuration,
+      hasOut: $animation.hideOldMessages,
     }}
   >
     <svelte:component this={component} {...props} />

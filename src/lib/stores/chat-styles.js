@@ -53,7 +53,8 @@ const animationStyles = createStyleStore()
 animationStyles.set({
   type: "slide",
   animationTime: 300,
-  keepOnChat: 3000,
+  hideOldMessages: true,
+  timeOnChat: 20_000,
   outEnabled: false,
 })
 

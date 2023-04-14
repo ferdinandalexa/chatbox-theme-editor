@@ -242,17 +242,25 @@ const animationFields = [
       },
       {
         type: "number",
-        label: "Animation time",
+        label: "Animation duration",
         cssProp: 'animationTime',
         hasDeps: false,
         value: animation.animationTime,
       },
       {
-        type: "number",
-        label: "Keep on chat",
-        cssProp: 'keepOnChat',
+        type: "checkbox",
+        label: "Hide old messages",
+        cssProp: 'hideOldMessages',
         hasDeps: false,
-        value: animation.keepOnChat,
+        value: animation.hideOldMessages,
+      },
+      {
+        type: "number",
+        label: "Time on chat",
+        cssProp: 'timeOnChat',
+        hasDeps: true,
+        deps: 'hideOldMessages',
+        value: animation.timeOnChat,
       },
     ]
   }

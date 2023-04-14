@@ -1,8 +1,9 @@
 /**
  * @param {number} steps 
+ * @param {boolean} hasOut 
  * @return {Keyframe[] | PropertyIndexedKeyframes} */
-export function fade(steps) {
-  const keyframes = [
+export function fade(steps, hasOut) {
+  const keyframes = hasOut ? [
     {
       opacity: 0,
       offset: 0,
@@ -19,7 +20,15 @@ export function fade(steps) {
       opacity: 0,
       offset: 1,
     },
-  ];
+  ] :
+    [
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+      },
+    ]
 
   return keyframes;
 }
