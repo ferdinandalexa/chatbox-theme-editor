@@ -11,6 +11,7 @@
   import Superchat from "$lib/components/messages/superchat.svelte";
 
   const animation = getContext(storeKeys.animation);
+  const timing = getContext(storeKeys.time);
 
   /** @typedef {import('$lib/types/messages').ListTypeMessages} ListTypeMessages */
   /** @typedef {import('$lib/types/animations').AnimateProps} AnimateProps */
@@ -58,15 +59,9 @@
   }, 3_000);
 
   $: {
-    let totalDuration = $animation.hideOldMessages
-      ? parseInt($animation.timeOnChat) + parseInt($animation.animationTime) * 2
-      : parseInt($animation.animationTime) * 2;
-
-    let stepsPercentage = $animation.animationTime / totalDuration;
-
     animateOpts = {
-      duration: totalDuration,
-      steps: stepsPercentage,
+      duration: $timing.totalTime,
+      steps: $timing.animationTimeRatio,
       type: $animation.type,
       hasOut: $animation.hideOldMessages,
     };
