@@ -8,6 +8,6 @@ import { createAnimateOpts } from "$lib/utils/createAnimateOpts";
  * @param {AnimateProps} params
  */
 
-export const animate = (node, { type, steps, duration, hasOut = false }) => {
-  node.animate(getKeyframes(type, steps, hasOut), createAnimateOpts(duration));
+export const animate = (node, { type, animationTimeRatio, duration, hideOldMessages = false }) => {
+  node.animate(getKeyframes(type, animationTimeRatio, hideOldMessages), createAnimateOpts(duration));
 };

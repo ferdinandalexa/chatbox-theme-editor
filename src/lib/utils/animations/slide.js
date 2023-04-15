@@ -1,30 +1,9 @@
 /**
- * @param {number} steps 
- * @param {boolean} hasOut 
+ * @param {number[]} steps 
  * @return {Keyframe[] | PropertyIndexedKeyframes} */
-export function slide(steps, hasOut) {
-  const keyframes = hasOut ? [
-    {
-      opacity: 0,
-      transform: "translateX(16px)",
-      offset: 0,
-    },
-    {
-      opacity: 1,
-      transform: "none",
-      offset: steps,
-    },
-    {
-      opacity: 1,
-      transform: "none",
-      offset: 1 - steps,
-    },
-    {
-      opacity: 0,
-      transform: "translateX(16px)",
-      offset: 1,
-    },
-  ] : [
+export function slide(steps) {
+
+  const cssProps = [
     {
       opacity: 0,
       transform: "translateX(16px)",
@@ -32,8 +11,21 @@ export function slide(steps, hasOut) {
     {
       opacity: 1,
       transform: "none",
+    },
+    {
+      opacity: 1,
+      transform: "none",
+    },
+    {
+      opacity: 0,
+      transform: "translateX(16px)",
     },
   ]
 
-  return keyframes;
+  return steps.map((step, index) => {
+    return {
+      ...cssProps[index],
+      offset: step
+    }
+  })
 }

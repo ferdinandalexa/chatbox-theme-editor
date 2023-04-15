@@ -1,8 +1,8 @@
 interface AnimateProps {
   type: string,
-  steps: number,
+  animationTimeRatio: number,
   duration: number,
-  hasOut?: boolean
+  hideOldMessages?: boolean
 }
 
 export type { AnimateProps }

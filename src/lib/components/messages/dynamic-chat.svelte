@@ -60,10 +60,10 @@
 
   $: {
     animateOpts = {
-      duration: $timing.totalTime,
-      steps: $timing.animationTimeRatio,
       type: $animation.type,
-      hasOut: $animation.hideOldMessages,
+      hideOldMessages: $animation.hideOldMessages,
+      duration: $timing.totalTime,
+      animationTimeRatio: $timing.animationTimeRatio,
     };
 
     listOfMessages = [];

@@ -67,7 +67,7 @@ const timing = derived(animationStyles, $animation => {
 
   return {
     totalTime,
-    animationTimeRatio
+    animationTimeRatio,
   }
 })
 

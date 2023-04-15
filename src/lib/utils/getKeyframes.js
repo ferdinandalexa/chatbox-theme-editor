@@ -3,13 +3,19 @@ import { fade } from "$lib/utils/animations/fade";
 
 /**
  * @param {string} type
- * @param {number} steps
- * @param {boolean} hasOut
+ * @param {number} animationTimeRatio
+ * @param {boolean} hideOldMessages
  * @return {Keyframe[] | PropertyIndexedKeyframes}
  * */
-export function getKeyframes(type, steps, hasOut) {
-  if (type === "slide") return slide(steps, hasOut)
-  if (type === "fade") return fade(steps, hasOut)
+export function getKeyframes(type, animationTimeRatio, hideOldMessages) {
+  /**@type {number[]}*/
+
+  const steps = hideOldMessages
+    ? [0, animationTimeRatio, 1 - animationTimeRatio, 1]
+    : [0, 1]
+
+  if (type === "slide") return slide(steps)
+  if (type === "fade") return fade(steps)
 
   return []
 }
