@@ -1,27 +1,22 @@
+import { fadeKeyframes } from "$lib/consts/animations/fadeKeyframes"
+
 /**
  * @param {number[]} steps  
- * @return {Keyframe[] | PropertyIndexedKeyframes} */
+ */
 export function fade(steps) {
-
-  const cssProps = [
-    {
-      opacity: 0
-    },
-    {
-      opacity: 1
-    },
-    {
-      opacity: 1
-    },
-    {
-      opacity: 0
-    },
-  ]
-
   return steps.map((step, index) => {
     return {
-      ...cssProps[index],
+      ...fadeKeyframes[index],
       offset: step
     }
   })
+}
+
+/**
+ * @param {number[]} steps  
+ */
+export function fadeCSSKeframes(steps) {
+  return steps.map((step, index) => {
+    return `${step * 100}%{${Object.entries(fadeKeyframes[index]).map((rule) => { return rule.join(': ') }).join(';')};}`
+  }).join('')
 }

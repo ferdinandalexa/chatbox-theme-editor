@@ -1,31 +1,22 @@
+import { slideKeyframes } from "$lib/consts/animations/slideKeyframes"
+
 /**
- * @param {number[]} steps 
+ * @param {number[]} steps  
  * @return {Keyframe[] | PropertyIndexedKeyframes} */
 export function slide(steps) {
-
-  const cssProps = [
-    {
-      opacity: 0,
-      transform: "translateX(16px)",
-    },
-    {
-      opacity: 1,
-      transform: "none",
-    },
-    {
-      opacity: 1,
-      transform: "none",
-    },
-    {
-      opacity: 0,
-      transform: "translateX(16px)",
-    },
-  ]
-
   return steps.map((step, index) => {
     return {
-      ...cssProps[index],
+      ...slideKeyframes[index],
       offset: step
     }
   })
+}
+
+/**
+ * @param {number[]} steps  
+ */
+export function slideCSSKeframes(steps) {
+  return steps.map((step, index) => {
+    return `${step * 100}%{${Object.entries(slideKeyframes[index]).map((rule) => { return rule.join(': ') }).join(';')};}`
+  }).join('')
 }
