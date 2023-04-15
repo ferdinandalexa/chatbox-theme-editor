@@ -1,4 +1,5 @@
 <script>
+  import { compressCSS } from "$lib/utils/compressCSS";
   import {
     generalStyles,
     regularMessageStyles,
@@ -42,7 +43,7 @@
         $animationStyles,
         $timing
       );
-      await navigator.clipboard.writeText(chatStyles);
+      await navigator.clipboard.writeText(compressCSS(chatStyles));
       await handleCopy();
     } catch (err) {
       console.error("Error copying text: ", err);
