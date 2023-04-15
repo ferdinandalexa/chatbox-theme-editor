@@ -3,6 +3,8 @@
     generalStyles,
     regularMessageStyles,
     sponsorStyles,
+    animationStyles,
+    timing,
   } from "$lib/stores/chat-styles";
   import { generateChatStyles } from "$lib/utils/generateChatStyles";
   import ChatContainer from "$lib/components/messages/chat-container.svelte";
@@ -36,7 +38,9 @@
       const chatStyles = generateChatStyles(
         $generalStyles,
         $regularMessageStyles,
-        $sponsorStyles
+        $sponsorStyles,
+        $animationStyles,
+        $timing
       );
       await navigator.clipboard.writeText(chatStyles);
       await handleCopy();
