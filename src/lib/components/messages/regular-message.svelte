@@ -1,9 +1,6 @@
 <script>
-  import { getContext } from "svelte";
-  import { storeKeys } from "$lib/stores/chat-styles";
-
-  /** @typedef {("owner" | "moderator" | "member") | null } AuthorType */
-  /**@type {AuthorType} [authorType]*/
+  /** @typedef {import('$lib/types/messages').AUTHOR_TYPES | null } AuthorType */
+  /**@type {AuthorType}*/
   export let authorType = null;
 </script>
 

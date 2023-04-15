@@ -1,4 +1,4 @@
-import { writable } from 'svelte/store';
+import { writable, derived } from 'svelte/store';
 
 function createStyleStore() {
   const { subscribe, set, update } = writable()
@@ -49,13 +49,37 @@ sponsorStyles.set({
   detailColor: "#ffffff",
 })
 
+const animationStyles = createStyleStore()
+animationStyles.set({
+  type: "slide",
+  animationTime: 300,
+  hideOldMessages: true,
+  timeOnChat: 20_000,
+  outEnabled: false,
+})
+
+const timing = derived(animationStyles, $animation => {
+  const totalTime = $animation.hideOldMessages
+    ? parseInt($animation.timeOnChat) + parseInt($animation.animationTime) * 2
+    : parseInt($animation.animationTime)
+
+  const animationTimeRatio = $animation.animationTime / totalTime;
+
+  return {
+    totalTime,
+    animationTimeRatio,
+  }
+})
+
 const storeKeys = {
   general: Symbol('general'),
   regularMessage: Symbol('regularMessage'),
   sponsor: Symbol('sponsor'),
   superchat: Symbol('superchat'),
   membership: Symbol('membership'),
-  animation: Symbol('animation')
+  animation: Symbol('animation'),
+  time: Symbol('animation time')
 }
 
-export { generalStyles, regularMessageStyles, sponsorStyles, storeKeys }
+
+export { generalStyles, regularMessageStyles, sponsorStyles, animationStyles, timing, storeKeys }

@@ -6,6 +6,7 @@
     sponsorFields,
     superchatFields,
     membershipFields,
+    animationFields,
   } from "$lib/stores/initialValues";
   import Set from "$lib/components/panels/customization/set.svelte";
 </script>
@@ -33,8 +34,7 @@
   <Set
     name="Animations"
     storeKey={storeKeys.animation}
-    fields={membershipFields}
-    disabled
+    fields={animationFields}
   />
 </div>
 

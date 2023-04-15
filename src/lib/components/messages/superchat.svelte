@@ -25,6 +25,8 @@
     margin-bottom: var(--g-gap, 2px);
     width: var(--g-messagesWidth, max-content);
     max-width: 100%;
+    animation: var(--a-type) var(--a-duration);
+    animation-fill-mode: both;
 
     font-size: 16px;
   }

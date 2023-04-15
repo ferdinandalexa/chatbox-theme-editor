@@ -20,4 +20,4 @@ interface Input {
   value: string | number | boolean;
 }
 
-export { Fields, Input }
+export type { Fields, Input }

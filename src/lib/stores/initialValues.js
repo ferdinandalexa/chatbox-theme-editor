@@ -1,10 +1,11 @@
 import { get } from 'svelte/store';
 
-import { generalStyles, regularMessageStyles, sponsorStyles } from "$lib/stores/chat-styles";
+import { generalStyles, regularMessageStyles, sponsorStyles, animationStyles } from "$lib/stores/chat-styles";
 
 const general = get(generalStyles)
 const regularMessage = get(regularMessageStyles)
 const sponsor = get(sponsorStyles)
+const animation = get(animationStyles)
 
 /** @typedef {import('$lib/types/fields').Fields} Fields */
 
@@ -221,4 +222,48 @@ const superchatFields = [
 const membershipFields = [
 ]
 
-export { generalFields, regularMessageFields, sponsorFields, superchatFields, membershipFields }
+/**@type {Array<Fields>} */
+const animationFields = [
+  {
+    field: "Animation",
+    inputs: [
+      {
+        type: "listbox",
+        label: "Type",
+        props: {
+          options: [
+            'slide',
+            'fade',
+          ]
+        },
+        cssProp: 'type',
+        hasDeps: false,
+        value: animation.type,
+      },
+      {
+        type: "number",
+        label: "Animation duration",
+        cssProp: 'animationTime',
+        hasDeps: false,
+        value: animation.animationTime,
+      },
+      {
+        type: "checkbox",
+        label: "Hide old messages",
+        cssProp: 'hideOldMessages',
+        hasDeps: false,
+        value: animation.hideOldMessages,
+      },
+      {
+        type: "number",
+        label: "Time on chat",
+        cssProp: 'timeOnChat',
+        hasDeps: true,
+        deps: 'hideOldMessages',
+        value: animation.timeOnChat,
+      },
+    ]
+  }
+]
+
+export { generalFields, regularMessageFields, sponsorFields, superchatFields, membershipFields, animationFields }

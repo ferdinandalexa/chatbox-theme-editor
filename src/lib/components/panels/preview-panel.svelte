@@ -1,18 +1,21 @@
 <script>
+  import { compressCSS } from "$lib/utils/compressCSS";
   import {
     generalStyles,
     regularMessageStyles,
     sponsorStyles,
+    animationStyles,
+    timing,
   } from "$lib/stores/chat-styles";
   import { generateChatStyles } from "$lib/utils/generateChatStyles";
   import ChatContainer from "$lib/components/messages/chat-container.svelte";
-  import RegularMessage from "$lib/components/messages/regular-message.svelte";
-  import Sponsor from "$lib/components/messages/sponsor.svelte";
-  import Superchat from "$lib/components/messages/superchat.svelte";
+  import DynamicChat from "$lib/components/messages/dynamic-chat.svelte";
+  import StaticChat from "../messages/static-chat.svelte";
 
   /**@type {HTMLButtonElement}*/
   let button;
   let isCopied = false;
+  let chatSimulationEnabled = false;
   /**@type {number}*/
   let timeoutId;
 
@@ -36,9 +39,11 @@
       const chatStyles = generateChatStyles(
         $generalStyles,
         $regularMessageStyles,
-        $sponsorStyles
+        $sponsorStyles,
+        $animationStyles,
+        $timing
       );
-      await navigator.clipboard.writeText(chatStyles);
+      await navigator.clipboard.writeText(compressCSS(chatStyles));
       await handleCopy();
     } catch (err) {
       console.error("Error copying text: ", err);
@@ -47,23 +52,36 @@
 </script>
 
 <section>
-  <button
-    class:isCopied
-    bind:this={button}
-    on:click={() => {
-      copyStyles();
-    }}
-  >
-    {isCopied ? "Copied to clipboard!" : "Copy styles"}
-  </button>
+  <menu>
+    <li>
+      <button
+        bind:this={button}
+        on:click={() => {
+          chatSimulationEnabled = !chatSimulationEnabled;
+        }}
+      >
+        {chatSimulationEnabled ? "Disable Live Chat" : "Enable Live Chat"}
+      </button>
+    </li>
+    <li>
+      <button
+        class:isCopied
+        bind:this={button}
+        on:click={() => {
+          copyStyles();
+        }}
+      >
+        {isCopied ? "Copied to clipboard!" : "Copy styles"}
+      </button>
+    </li>
+  </menu>
 
   <ChatContainer>
-    <RegularMessage />
-    <RegularMessage authorType="owner" />
-    <RegularMessage authorType="moderator" />
-    <RegularMessage authorType="member" />
-    <Sponsor />
-    <Superchat />
+    {#if chatSimulationEnabled}
+      <DynamicChat />
+    {:else}
+      <StaticChat />
+    {/if}
   </ChatContainer>
 </section>
 
@@ -85,11 +103,17 @@
     z-index: -1;
   }
 
-  button {
+  menu {
+    display: flex;
+    gap: 1rem;
+
     position: absolute;
     right: 1rem;
     bottom: 1rem;
+    z-index: 1;
+  }
 
+  button {
     padding: 1.25rem 1.75rem;
     border: none;
     border-radius: 0.5rem;
@@ -97,8 +121,6 @@
     color: #fff;
     font-size: 1rem;
     font-weight: 700;
-
-    z-index: 1;
   }
 
   button:hover {

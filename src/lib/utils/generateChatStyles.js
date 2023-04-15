@@ -1,3 +1,5 @@
+import { getCSSKeyframes } from "$lib/utils//getKeyframes"
+
 /**
  * @param {Object} general
  * @param {string} general.background
@@ -23,8 +25,16 @@
  * @param {string} sponsor.background
  * @param {string} sponsor.eventColor
  * @param {string} sponsor.detailColor
+
+ * @param {Object} animation
+ * @param {string} animation.type
+ * @param {boolean} animation.hideOldMessages
+ * 
+ * @param {Object} timing
+ * @param {number} timing.totalTime
+ * @param {number} timing.animationTimeRatio
 */
-export function generateChatStyles(general, regularMessage, sponsor) {
+export function generateChatStyles(general, regularMessage, sponsor, animation, timing) {
   return `
     /* *** General adjusts *** */
     *, *::before, *::after {
@@ -93,6 +103,8 @@ export function generateChatStyles(general, regularMessage, sponsor) {
       margin-bottom: var(--g-gap, 2rem);
       width: var(--g-messagesWidth, max-content) !important;
       max-width: 100% !important;
+
+      animation: animation ${timing.totalTime}ms both;
 
       font-size: 1.6rem !important;
     }
@@ -265,6 +277,12 @@ export function generateChatStyles(general, regularMessage, sponsor) {
     yt-live-chat-paid-message-renderer #content{
       font-family: var(--g-ff-content, sans-serif) !important;
     }
+
+    /* *** Animation Chat *** */
+    @keyframes animation {
+      ${getCSSKeyframes(animation.type, timing.animationTimeRatio, animation.hideOldMessages)}
+    }
+
 
     /* *** Hidde YT Chat interface *** */
     yt-live-chat-text-message-renderer[is-deleted],
