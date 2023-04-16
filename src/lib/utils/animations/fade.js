@@ -1,12 +1,13 @@
-import { fadeKeyframes } from "$lib/consts/animations/fadeKeyframes"
+import { animationsType } from "$lib/consts/animations/animationsType"
 
 /**
+ * @deprecated Use just the getKeyframe() function.
  * @param {number[]} steps  
  */
 export function fade(steps) {
   return steps.map((step, index) => {
     return {
-      ...fadeKeyframes[index],
+      ...animationsType.fade[index],
       offset: step
     }
   })
@@ -17,6 +18,6 @@ export function fade(steps) {
  */
 export function fadeCSSKeframes(steps) {
   return steps.map((step, index) => {
-    return `${step * 100}%{${Object.entries(fadeKeyframes[index]).map((rule) => { return rule.join(': ') }).join(';')};}`
+    return `${step * 100}%{${Object.entries(animationsType.fade[index]).map((rule) => { return rule.join(': ') }).join(';')};}`
   }).join('')
 }
