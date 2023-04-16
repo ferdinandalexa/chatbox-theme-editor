@@ -1,6 +1,3 @@
-import { slideCSSKeframes } from "$lib/utils/animations/slide";
-import { fadeCSSKeframes } from "$lib/utils/animations/fade";
-
 import { animationsType } from "$lib/consts/animations/animationsType";
 
 /**
@@ -42,8 +39,13 @@ export function getCSSKeyframes(type, animationTimeRatio, hideOldMessages) {
     ? [0, animationTimeRatio, 1 - animationTimeRatio, 1]
     : [0, 1]
 
-  if (type === "slide") return slideCSSKeframes(steps)
-  if (type === "fade") return fadeCSSKeframes(steps)
+  const animationSelected = animationsType[type] ?? [];
+
+  if (animationSelected.length > 0) {
+    return steps.map((step, index) => {
+      return `${step * 100}%{${Object.entries(animationsType.fade[index]).map((rule) => { return rule.join(': ') }).join(';')};}`
+    }).join('')
+  }
 
   return ''
 }
