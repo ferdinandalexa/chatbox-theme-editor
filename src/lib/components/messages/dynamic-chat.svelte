@@ -50,7 +50,7 @@
   let listOfMessages = [];
   /** @type {AnimateProps} */
   let animateOpts;
-  /** @type {number} */
+  /** @type {ReturnType<typeof setTimeout>} */
   let intervalId;
 
   intervalId = setInterval(() => {
