@@ -57,22 +57,22 @@
 
 <style>
   .list {
-    display: block;
     position: relative;
+    display: block;
   }
 
   .list-input {
-    background-color: transparent;
-    border: 0.1rem solid #424242;
-    color: var(--blue-50);
-    border-radius: 0.4rem;
     display: block;
-    font-size: 1rem;
+    width: 100%;
     min-height: calc(1.4rem + 26px);
     padding: 0 0.75rem;
+    border: 0.1rem solid #424242;
+    background-color: transparent;
+    border-radius: 0.4rem;
+    color: var(--blue-50);
+    font-size: 1rem;
     outline: none;
     text-align: left;
-    width: 100%;
   }
 
   .open .list-input {
@@ -91,16 +91,16 @@
   }
 
   .list-menu {
-    background-color: var(--blue-600);
+    position: absolute;
+    display: none;
+    width: 100%;
+    max-height: 8rem;
     border: 0.1rem solid var(--blue-500);
+    background-color: var(--blue-600);
+    background-color: #242424;
     border-radius: 0 0 0.4rem 0.4rem;
     color: var(--blue-50);
-    position: absolute;
-    background-color: #242424;
-    max-height: 8rem;
-    display: none;
     outline: none;
-    width: 100%;
     overflow-y: auto;
   }
 
@@ -128,10 +128,10 @@
 
   .open .list-menu {
     --sb-size-menu: 8px;
-    display: block;
-    border: 0.1rem solid #424242;
 
     z-index: 2;
+    display: block;
+    border: 0.1rem solid #424242;
   }
 
   .list-option {
@@ -143,7 +143,7 @@
   .list-option.active,
   .list-option.selected.active,
   .list-option.selected.active {
-    background-color: #313131;
     border-color: #424242;
+    background-color: #313131;
   }
 </style>

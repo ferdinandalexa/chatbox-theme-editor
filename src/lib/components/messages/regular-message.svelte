@@ -7,7 +7,7 @@
 <yt-live-chat-text-message-renderer author-type={authorType}>
   <yt-img-shadow id="author-photo">
     <div
-      style="display: block; background-color: white; width: 100%; height: 100%;"
+      style="display: block; width: 100%; height: 100%; background-color: white;"
     />
   </yt-img-shadow>
 
@@ -23,7 +23,7 @@
               viewBox="0 0 16 16"
               preserveAspectRatio="xMidYMid meet"
               focusable="false"
-              style="pointer-events: none; display: block; width: 100%; height: 100%; fill: currentColor"
+              style=" display: block; width: 100%; height: 100%; fill: currentColor;pointer-events: none"
             >
               <g class="style-scope yt-icon">
                 <path
@@ -45,16 +45,16 @@
 
 <style>
   yt-live-chat-text-message-renderer {
-    background-color: var(--rm-background);
     display: flex;
-    gap: 10px;
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: var(--g-gap);
     width: var(--g-messagesWidth);
     max-width: 100%;
-    font-size: 16px;
     height: max-content;
+    padding: 15px;
+    margin-bottom: var(--g-gap);
+    background-color: var(--rm-background);
+    border-radius: 5px;
+    font-size: 16px;
+    gap: 10px;
   }
 
   yt-live-chat-text-message-renderer,
@@ -84,13 +84,13 @@
   }
 
   yt-img-shadow {
-    flex: none;
     display: var(--g-avatarDisplay);
-    --size: var(--g-avatarSize);
+    overflow: hidden;
     width: var(--size);
     height: var(--size);
-    overflow: hidden;
+    flex: none;
     border-radius: 50%;
+    --size: var(--g-avatarSize);
   }
 
   .content {
@@ -105,46 +105,46 @@
     display: inline-flex;
     align-items: baseline;
     padding: 0;
+    margin-right: 2.5px;
     margin-bottom: 2.5px;
     font-family: var(--g-ff-header);
-    margin-right: 2.5px;
   }
 
   yt-live-chat-author-chip::after {
-    content: ":";
     color: var(--t-color);
+    content: ":";
     font-weight: bold;
     margin-inline: 0.25rem;
   }
 
   .author-name {
-    color: var(--t-color);
-    background-color: transparent;
     padding: 0;
+    background-color: transparent;
+    color: var(--t-color);
     font-weight: 700;
     vertical-align: middle;
   }
 
   .author-badges {
     display: var(--rm-badgesDisplay);
-    color: var(--t-color);
     margin-left: 5px;
+    color: var(--t-color);
   }
 
   yt-icon {
     display: inline-block;
+    width: var(--size);
+    height: var(--size);
     margin: 0;
     vertical-align: initial;
     --size: 16px;
-    width: var(--size);
-    height: var(--size);
   }
 
   .message {
     display: var(--g-messageBreakline);
-    line-height: 1.5;
-    font-family: var(--g-ff-content);
     color: var(--rm-textColor);
+    font-family: var(--g-ff-content);
+    line-height: 1.5;
     vertical-align: baseline;
   }
 </style>

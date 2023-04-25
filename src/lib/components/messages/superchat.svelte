@@ -2,7 +2,7 @@
   <div id="header" style="background-color: rgba(208,0,0,1);">
     <yt-img-shadow id="author-photo">
       <div
-        style="display: block; background-color: white; width: 100%; height: 100%;"
+        style="display: block; width: 100%; height: 100%; background-color: white;"
       />
     </yt-img-shadow>
     <div id="header-content">
@@ -19,14 +19,14 @@
 <style>
   yt-live-chat-paid-message-renderer {
     display: block;
-    padding: 0;
     overflow: hidden;
-    border-radius: 5px;
-    margin-bottom: var(--g-gap, 2px);
     width: var(--g-messagesWidth, max-content);
     max-width: 100%;
+    padding: 0;
+    margin-bottom: var(--g-gap, 2px);
     animation: var(--a-type) var(--a-duration);
     animation-fill-mode: both;
+    border-radius: 5px;
 
     font-size: 16px;
   }
@@ -37,8 +37,8 @@
 
   yt-live-chat-paid-message-renderer #header {
     display: flex;
-    gap: 10px;
     font-family: var(--g-ff-header, sans-serif);
+    gap: 10px;
   }
 
   yt-live-chat-paid-message-renderer :is(#author-name, #purchase-amount) {

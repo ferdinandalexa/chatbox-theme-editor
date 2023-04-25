@@ -31,8 +31,8 @@
     display: block;
     width: 100%;
     border: none;
-    border-radius: 0.5rem;
     background-color: #424242;
+    border-radius: 0.5rem;
     padding-block: 1rem;
     padding-inline: 1rem;
     user-select: none;

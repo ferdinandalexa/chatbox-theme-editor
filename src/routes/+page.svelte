@@ -33,8 +33,8 @@
 <style>
   .grid {
     display: grid;
-    grid-template-columns: 22.5rem 1fr;
-    height: 100%;
     overflow: hidden;
+    height: 100%;
+    grid-template-columns: 22.5rem 1fr;
   }
 </style>

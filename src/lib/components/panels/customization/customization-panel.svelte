@@ -42,10 +42,10 @@
   .customization-panel {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    padding: 1rem;
     background-color: #212121;
     color: white;
-    padding: 1rem;
+    gap: 1rem;
     overflow-y: scroll;
   }
 

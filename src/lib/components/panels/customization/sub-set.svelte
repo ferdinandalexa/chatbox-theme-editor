@@ -87,7 +87,7 @@
   }
 
   h3 {
-    font-size: 1rem;
     margin-bottom: 1.25rem;
+    font-size: 1rem;
   }
 </style>

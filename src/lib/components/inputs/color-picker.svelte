@@ -10,13 +10,13 @@
 
 <style>
   input {
-    color: #cacaca;
-    background-color: transparent;
-    border-radius: 0;
-    border-bottom: 0.0125rem solid #424242;
+    width: 100%;
     padding: 0.5rem;
     padding-left: 2.25rem;
-    width: 100%;
+    border-bottom: 0.0125rem solid #424242;
+    background-color: transparent;
+    border-radius: 0;
+    color: #cacaca;
   }
 
   div span {

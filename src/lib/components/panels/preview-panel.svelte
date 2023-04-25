@@ -87,37 +87,37 @@
 
 <style>
   section {
-    width: 100%;
     position: relative;
+    width: 100%;
     padding: 2rem;
   }
 
   section::after {
-    content: "";
     position: absolute;
-    inset: 0;
-    filter: brightness(25%) contrast(25%);
-    background-image: url(/checker.png);
-    background-size: 8rem;
-    background-position: center;
     z-index: -1;
+    background-image: url(/checker.png);
+    background-position: center;
+    background-size: 8rem;
+    content: "";
+    filter: brightness(25%) contrast(25%);
+    inset: 0;
   }
 
   menu {
-    display: flex;
-    gap: 1rem;
 
     position: absolute;
+    z-index: 1;
     right: 1rem;
     bottom: 1rem;
-    z-index: 1;
+    display: flex;
+    gap: 1rem;
   }
 
   button {
     padding: 1.25rem 1.75rem;
     border: none;
-    border-radius: 0.5rem;
     background-color: #212121;
+    border-radius: 0.5rem;
     color: #fff;
     font-size: 1rem;
     font-weight: 700;

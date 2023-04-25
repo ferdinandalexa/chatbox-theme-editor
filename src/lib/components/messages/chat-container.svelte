@@ -19,9 +19,9 @@
 
 <style>
   #chat-container {
-    background-color: var(--g-background, hsla(216, 100%, 88%, 0.4));
     overflow: hidden;
     margin: 0;
+    background-color: var(--g-background, hsla(216, 100%, 88%, 0.4));
   }
 
   yt-live-chat-renderer {
@@ -39,10 +39,10 @@
 
   yt-live-chat-item-list-renderer #items {
     position: absolute;
-    inset-block-end: calc(var(--g-padding, 2rem) - var(--g-gap, 2rem));
-    inset-inline: var(--g-padding, 2rem);
     overflow: hidden;
     padding: 0;
+    inset-block-end: calc(var(--g-padding, 2rem) - var(--g-gap, 2rem));
+    inset-inline: var(--g-padding, 2rem);
   }
 
   yt-live-chat-item-list-renderer #items {

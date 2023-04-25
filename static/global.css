@@ -1,19 +1,19 @@
 *, *::after, *::before {
   box-sizing: border-box;
-  margin: 0;
   padding: 0;
   border: none;
+  margin: 0;
 }
 
 body {
+  display: grid;
   width: 100%;
   height: 100vh;
-  display: grid;
   font-family: sans-serif;
 }
 
 menu, ul, ol, li {
-  list-style: none;
   padding: 0;
   margin: 0;
+  list-style: none;
 }

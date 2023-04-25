@@ -1,7 +1,7 @@
 <yt-live-chat-legacy-paid-message-renderer>
   <yt-img-shadow class="author-photo">
     <div
-      style="display: block; background-color: white; wclassth: 100%; height: 100%;"
+      style="display: block; height: 100%; background-color: white; wclassth: 100%;"
     />
   </yt-img-shadow>
 
@@ -16,24 +16,24 @@
 <style>
   yt-live-chat-legacy-paid-message-renderer {
     display: flex;
-    background-color: var(--sp-background, #10a259);
-    gap: 10px;
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: var(--g-gap, 20px);
     width: var(--g-messagesWidth, max-content);
     max-width: 100%;
+    padding: 15px;
+    margin-bottom: var(--g-gap, 20px);
+    background-color: var(--sp-background, #10a259);
+    border-radius: 5px;
     font-size: 16px;
+    gap: 10px;
   }
 
   yt-img-shadow {
-    flex: none;
     display: var(--g-avatarDisplay);
-    --size: var(--g-avatarSize);
+    overflow: hidden;
     width: var(--size);
     height: var(--size);
-    overflow: hidden;
+    flex: none;
     border-radius: 50%;
+    --size: var(--g-avatarSize);
   }
 
   yt-live-chat-legacy-paid-message-renderer
@@ -49,8 +49,8 @@
   }
 
   yt-live-chat-legacy-paid-message-renderer .detail-text {
-    font-family: var(--g-ff-content, sans-serif) !important;
-    color: var(--sp-detailTextColor, #ffffff) !important;
     margin-top: 0.4rem !important;
+    color: var(--sp-detailTextColor, #ffffff) !important;
+    font-family: var(--g-ff-content, sans-serif) !important;
   }
 </style>
