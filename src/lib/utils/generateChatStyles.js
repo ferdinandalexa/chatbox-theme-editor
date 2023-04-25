@@ -1,4 +1,4 @@
-import { getCSSKeyframes } from "$lib/utils//getKeyframes"
+import { getCSSKeyframes } from '$lib/utils//getKeyframes';
 
 /**
  * @param {Object} general
@@ -11,7 +11,7 @@ import { getCSSKeyframes } from "$lib/utils//getKeyframes"
  * @param {number} general.avatarSize
  * @param {number} general.headerFont
  * @param {number} general.bodyFont
- * 
+ *
  * @param {Object} regularMessage
  * @param {boolean} regularMessage.badgesDisplay
  * @param {string} regularMessage.background
@@ -20,7 +20,7 @@ import { getCSSKeyframes } from "$lib/utils//getKeyframes"
  * @param {string} regularMessage.colorOwner
  * @param {string} regularMessage.colorModerator
  * @param {string} regularMessage.colorMember
- * 
+ *
  * @param {Object} sponsor
  * @param {string} sponsor.background
  * @param {string} sponsor.eventColor
@@ -29,12 +29,12 @@ import { getCSSKeyframes } from "$lib/utils//getKeyframes"
  * @param {Object} animation
  * @param {string} animation.type
  * @param {boolean} animation.hideOldMessages
- * 
+ *
  * @param {Object} timing
  * @param {number} timing.totalTime
  * @param {number} timing.animationTimeRatio
 */
-export function generateChatStyles(general, regularMessage, sponsor, animation, timing) {
+export function generateChatStyles (general, regularMessage, sponsor, animation, timing) {
   return `
     /* *** General adjusts *** */
     *, *::before, *::after {
@@ -56,7 +56,7 @@ export function generateChatStyles(general, regularMessage, sponsor, animation, 
       --g-avatarDisplay: ${general.avatarDisplay ? 'inline-block' : 'none'};
       --g-avatarSize: ${general.avatarSize / 10}rem;
 
-      --rm-badgesDisplay: ${regularMessage.badgesDisplay ? "inline-block" : "none"};
+      --rm-badgesDisplay: ${regularMessage.badgesDisplay ? 'inline-block' : 'none'};
       --rm-background: ${regularMessage.background};
       --rm-textColor: ${regularMessage.messageColor};
       --rm-authorDefault-color: ${regularMessage.colorDefault};
@@ -307,5 +307,5 @@ export function generateChatStyles(general, regularMessage, sponsor, animation, 
     yt-live-chat-item-list-renderer #item-scroller {
       overflow: hidden !important;
     }
-  `
+  `;
 }

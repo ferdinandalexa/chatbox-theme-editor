@@ -1,269 +1,269 @@
 import { get } from 'svelte/store';
 
-import { generalStyles, regularMessageStyles, sponsorStyles, animationStyles } from "$lib/stores/chat-styles";
+import { generalStyles, regularMessageStyles, sponsorStyles, animationStyles } from '$lib/stores/chat-styles';
 
-const general = get(generalStyles)
-const regularMessage = get(regularMessageStyles)
-const sponsor = get(sponsorStyles)
-const animation = get(animationStyles)
+const general = get(generalStyles);
+const regularMessage = get(regularMessageStyles);
+const sponsor = get(sponsorStyles);
+const animation = get(animationStyles);
 
 /** @typedef {import('$lib/types/fields').Fields} Fields */
 
-/**@type {Array<Fields>} */
+/** @type {Array<Fields>} */
 const generalFields = [
   {
-    field: "Layout",
+    field: 'Layout',
     inputs: [
       {
-        type: "number",
-        label: `Box padding`,
-        cssProp: "padding",
+        type: 'number',
+        label: 'Box padding',
+        cssProp: 'padding',
         props: {
-          min: "0",
-          max: "20",
+          min: '0',
+          max: '20'
         },
         value: general.padding,
-        hasDeps: false,
+        hasDeps: false
       },
       {
-        type: "number",
-        label: `Spacing between messages`,
-        cssProp: "marginBottom",
+        type: 'number',
+        label: 'Spacing between messages',
+        cssProp: 'marginBottom',
         props: {
-          min: "0",
-          max: "20",
+          min: '0',
+          max: '20'
         },
         hasDeps: false,
-        value: general.marginBottom,
+        value: general.marginBottom
       },
       {
-        type: "color",
-        label: `Box background:`,
-        cssProp: "background",
+        type: 'color',
+        label: 'Box background:',
+        cssProp: 'background',
         hasDeps: false,
-        value: general.background,
+        value: general.background
       }
     ]
   },
   {
-    field: "Fonts",
+    field: 'Fonts',
     inputs: [
       {
-        type: "listbox",
-        label: "Header font",
-        cssProp: "headerFont",
+        type: 'listbox',
+        label: 'Header font',
+        cssProp: 'headerFont',
         props: {
           options: [
             'sans-serif',
-            'monospace',
+            'monospace'
           ]
         },
         hasDeps: false,
-        value: general.headerFont,
+        value: general.headerFont
       },
       {
-        type: "listbox",
-        label: "Body font",
-        cssProp: "bodyFont",
+        type: 'listbox',
+        label: 'Body font',
+        cssProp: 'bodyFont',
         props: {
           options: [
             'sans-serif',
-            'monospace',
+            'monospace'
           ]
         },
         hasDeps: false,
-        value: general.bodyFont,
+        value: general.bodyFont
       }
     ]
   },
   {
-    field: "Messages Appearence",
+    field: 'Messages Appearence',
     inputs: [
       {
-        type: "checkbox",
-        label: `Full Width`,
-        cssProp: "fullWidth",
+        type: 'checkbox',
+        label: 'Full Width',
+        cssProp: 'fullWidth',
         hasDeps: false,
-        value: general.fullWidth,
+        value: general.fullWidth
       },
       {
-        type: "checkbox",
-        label: `One line`,
-        cssProp: "breakline",
+        type: 'checkbox',
+        label: 'One line',
+        cssProp: 'breakline',
         hasDeps: false,
-        value: general.breakline,
+        value: general.breakline
       },
       {
-        type: "checkbox",
-        label: `Show/hide avatar`,
-        cssProp: "avatarDisplay",
+        type: 'checkbox',
+        label: 'Show/hide avatar',
+        cssProp: 'avatarDisplay',
         hasDeps: false,
-        value: general.avatarDisplay,
+        value: general.avatarDisplay
       },
       {
-        type: "number",
-        label: `Avatar size`,
-        cssProp: "avatarSize",
+        type: 'number',
+        label: 'Avatar size',
+        cssProp: 'avatarSize',
         props: {
-          min: "18",
-          max: "32",
+          min: '18',
+          max: '32'
         },
         hasDeps: true,
         deps: 'avatarDisplay',
-        value: general.avatarSize,
-      },
+        value: general.avatarSize
+      }
     ]
   }
-]
+];
 
-/**@type {Array<Fields>} */
+/** @type {Array<Fields>} */
 const regularMessageFields = [
   {
-    field: "Layout",
+    field: 'Layout',
     inputs: [
       {
-        type: "checkbox",
-        label: `Display badges`,
-        cssProp: "badgesDisplay",
+        type: 'checkbox',
+        label: 'Display badges',
+        cssProp: 'badgesDisplay',
         hasDeps: false,
-        value: regularMessage.badgesDisplay,
-      },
+        value: regularMessage.badgesDisplay
+      }
     ]
   },
   {
-    field: "General Appearence",
+    field: 'General Appearence',
     inputs: [
       {
-        type: "color",
-        label: `Background color`,
-        cssProp: "background",
+        type: 'color',
+        label: 'Background color',
+        cssProp: 'background',
         hasDeps: false,
-        value: regularMessage.background,
+        value: regularMessage.background
       },
       {
-        type: "color",
-        label: `Message color`,
-        cssProp: "messageColor",
+        type: 'color',
+        label: 'Message color',
+        cssProp: 'messageColor',
         hasDeps: false,
-        value: regularMessage.messageColor,
-      },
+        value: regularMessage.messageColor
+      }
     ]
   },
   {
-    field: "Channel Name",
+    field: 'Channel Name',
     inputs: [
       {
-        type: "color",
-        label: `Default`,
-        cssProp: "colorDefault",
+        type: 'color',
+        label: 'Default',
+        cssProp: 'colorDefault',
         hasDeps: false,
-        value: regularMessage.colorDefault,
+        value: regularMessage.colorDefault
       },
       {
-        type: "color",
-        label: `Owner`,
-        cssProp: "colorOwner",
+        type: 'color',
+        label: 'Owner',
+        cssProp: 'colorOwner',
         hasDeps: false,
-        value: regularMessage.colorOwner,
+        value: regularMessage.colorOwner
       },
       {
-        type: "color",
-        label: `Moderator`,
-        cssProp: "colorModerator",
+        type: 'color',
+        label: 'Moderator',
+        cssProp: 'colorModerator',
         hasDeps: false,
-        value: regularMessage.colorModerator,
+        value: regularMessage.colorModerator
       },
       {
-        type: "color",
-        label: `Member`,
-        cssProp: "colorMember",
+        type: 'color',
+        label: 'Member',
+        cssProp: 'colorMember',
         hasDeps: false,
-        value: regularMessage.colorMember,
-      },
-    ]
-  },
-]
-
-/**@type {Array<Fields>} */
-const sponsorFields = [
-  {
-    field: "Appearence",
-    inputs: [
-      {
-        type: "color",
-        label: `Background`,
-        cssProp: "background",
-        hasDeps: false,
-        value: sponsor.background,
-      },
-      {
-        type: "color",
-        label: `Event text color`,
-        cssProp: "eventColor",
-        hasDeps: false,
-        value: sponsor.eventColor,
-      },
-      {
-        type: "color",
-        label: `Detail text color`,
-        cssProp: "detailColor",
-        hasDeps: false,
-        value: sponsor.detailColor,
-      },
+        value: regularMessage.colorMember
+      }
     ]
   }
-]
+];
 
-/**@type {Array<Fields>} */
-const superchatFields = [
-]
-
-/**@type {Array<Fields>} */
-const membershipFields = [
-]
-
-/**@type {Array<Fields>} */
-const animationFields = [
+/** @type {Array<Fields>} */
+const sponsorFields = [
   {
-    field: "Animation",
+    field: 'Appearence',
     inputs: [
       {
-        type: "listbox",
-        label: "Type",
+        type: 'color',
+        label: 'Background',
+        cssProp: 'background',
+        hasDeps: false,
+        value: sponsor.background
+      },
+      {
+        type: 'color',
+        label: 'Event text color',
+        cssProp: 'eventColor',
+        hasDeps: false,
+        value: sponsor.eventColor
+      },
+      {
+        type: 'color',
+        label: 'Detail text color',
+        cssProp: 'detailColor',
+        hasDeps: false,
+        value: sponsor.detailColor
+      }
+    ]
+  }
+];
+
+/** @type {Array<Fields>} */
+const superchatFields = [
+];
+
+/** @type {Array<Fields>} */
+const membershipFields = [
+];
+
+/** @type {Array<Fields>} */
+const animationFields = [
+  {
+    field: 'Animation',
+    inputs: [
+      {
+        type: 'listbox',
+        label: 'Type',
         props: {
           options: [
             'slide',
-            'fade',
+            'fade'
           ]
         },
         cssProp: 'type',
         hasDeps: false,
-        value: animation.type,
+        value: animation.type
       },
       {
-        type: "number",
-        label: "Animation duration",
+        type: 'number',
+        label: 'Animation duration',
         cssProp: 'animationTime',
         hasDeps: false,
-        value: animation.animationTime,
+        value: animation.animationTime
       },
       {
-        type: "checkbox",
-        label: "Hide old messages",
+        type: 'checkbox',
+        label: 'Hide old messages',
         cssProp: 'hideOldMessages',
         hasDeps: false,
-        value: animation.hideOldMessages,
+        value: animation.hideOldMessages
       },
       {
-        type: "number",
-        label: "Time on chat",
+        type: 'number',
+        label: 'Time on chat',
         cssProp: 'timeOnChat',
         hasDeps: true,
         deps: 'hideOldMessages',
-        value: animation.timeOnChat,
-      },
+        value: animation.timeOnChat
+      }
     ]
   }
-]
+];
 
-export { generalFields, regularMessageFields, sponsorFields, superchatFields, membershipFields, animationFields }
+export { generalFields, regularMessageFields, sponsorFields, superchatFields, membershipFields, animationFields };

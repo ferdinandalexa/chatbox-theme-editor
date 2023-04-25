@@ -1,7 +1,7 @@
 import { writable, derived } from 'svelte/store';
 
-function createStyleStore() {
-  const { subscribe, set, update } = writable()
+function createStyleStore () {
+  const { subscribe, set, update } = writable();
 
   return {
     subscribe,
@@ -13,12 +13,12 @@ function createStyleStore() {
       return {
         ...prevStyles,
         ...newStyles
-      }
-    }),
-  }
+      };
+    })
+  };
 }
 
-const generalStyles = createStyleStore()
+const generalStyles = createStyleStore();
 generalStyles.set({
   background: '#c2daff77',
   padding: 20,
@@ -28,10 +28,10 @@ generalStyles.set({
   avatarDisplay: true,
   avatarSize: 25,
   headerFont: 'sans-serif',
-  bodyFont: 'sans-serif',
-})
+  bodyFont: 'sans-serif'
+});
 
-const regularMessageStyles = createStyleStore()
+const regularMessageStyles = createStyleStore();
 regularMessageStyles.set({
   badgesDisplay: true,
   background: '#212121',
@@ -39,37 +39,37 @@ regularMessageStyles.set({
   colorDefault: '#cacaca',
   colorOwner: '#ffd600',
   colorModerator: '#5e84f1',
-  colorMember: '#10a259',
-})
+  colorMember: '#10a259'
+});
 
-const sponsorStyles = createStyleStore()
+const sponsorStyles = createStyleStore();
 sponsorStyles.set({
-  background: "#10a259",
-  eventColor: "#ffffff",
-  detailColor: "#ffffff",
-})
+  background: '#10a259',
+  eventColor: '#ffffff',
+  detailColor: '#ffffff'
+});
 
-const animationStyles = createStyleStore()
+const animationStyles = createStyleStore();
 animationStyles.set({
-  type: "slide",
+  type: 'slide',
   animationTime: 300,
   hideOldMessages: true,
   timeOnChat: 20_000,
-  outEnabled: false,
-})
+  outEnabled: false
+});
 
 const timing = derived(animationStyles, $animation => {
   const totalTime = $animation.hideOldMessages
     ? parseInt($animation.timeOnChat) + parseInt($animation.animationTime) * 2
-    : parseInt($animation.animationTime)
+    : parseInt($animation.animationTime);
 
   const animationTimeRatio = $animation.animationTime / totalTime;
 
   return {
     totalTime,
-    animationTimeRatio,
-  }
-})
+    animationTimeRatio
+  };
+});
 
 const storeKeys = {
   general: Symbol('general'),
@@ -79,7 +79,6 @@ const storeKeys = {
   membership: Symbol('membership'),
   animation: Symbol('animation'),
   time: Symbol('animation time')
-}
+};
 
-
-export { generalStyles, regularMessageStyles, sponsorStyles, animationStyles, timing, storeKeys }
+export { generalStyles, regularMessageStyles, sponsorStyles, animationStyles, timing, storeKeys };

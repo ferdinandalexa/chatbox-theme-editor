@@ -1,32 +1,32 @@
 <script>
-  import { getContext } from "svelte";
+  import { getContext } from 'svelte';
 
-  import Checkbox from "$lib/components/inputs/checkbox.svelte";
-  import ColorPicker from "$lib/components/inputs/color-picker.svelte";
-  import TextField from "$lib/components/inputs/text-field.svelte";
-  import ListBox from "$lib/components/inputs/list-box.svelte";
+  import Checkbox from '$lib/components/inputs/checkbox.svelte';
+  import ColorPicker from '$lib/components/inputs/color-picker.svelte';
+  import TextField from '$lib/components/inputs/text-field.svelte';
+  import ListBox from '$lib/components/inputs/list-box.svelte';
 
-  export let name = "Sub set";
+  export let name = 'Sub set';
 
   /** @typedef {import('$lib/types/fields').Input} Input */
-  /**@type {Array<Input>}*/
+  /** @type {Array<Input>} */
   export let inputs = [];
 
-  /**@type {Symbol | null}*/
+  /** @type {Symbol | null} */
   export let storeKey = null;
 
   const stylesStore = getContext(storeKey);
 
-  const nameFormated = name.toLowerCase().split(" ").join("-");
+  const nameFormated = name.toLowerCase().split(' ').join('-');
 
-  /**@typedef {import ("svelte").ComponentType} ComponentType;*/
-  /**@type {Object<string, ComponentType>}*/
+  /** @typedef {import ("svelte").ComponentType} ComponentType; */
+  /** @type {Object<string, ComponentType>} */
   const inputType = {
     color: ColorPicker,
     text: TextField,
     number: TextField,
     checkbox: Checkbox,
-    listbox: ListBox,
+    listbox: ListBox
   };
 
   /**
@@ -40,7 +40,7 @@
     if (isCustomEvent) {
       stylesStore.update({ [property]: event?.detail?.value });
     } else {
-      if (event?.target?.type === "checkbox") {
+      if (event?.target?.type === 'checkbox') {
         stylesStore.update({ [property]: event?.target?.checked });
       } else {
         stylesStore.update({ [property]: value });

@@ -1,6 +1,6 @@
 <script>
-  export let value = "#ffffff00";
-  export let label = "Field";
+  export let value = '#ffffff00';
+  export let label = 'Field';
 </script>
 
 <div>

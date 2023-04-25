@@ -2,21 +2,21 @@
 const slideKeyframes = [
   {
     opacity: 0,
-    transform: "translateX(16px)",
+    transform: 'translateX(16px)'
   },
   {
     opacity: 1,
-    transform: "none",
+    transform: 'none'
   },
   {
     opacity: 1,
-    transform: "none",
+    transform: 'none'
   },
   {
     opacity: 0,
-    transform: "translateX(16px)",
-  },
-]
+    transform: 'translateX(16px)'
+  }
+];
 
 /** @type {Keyframe[]} */
 const fadeKeyframes = [
@@ -31,11 +31,11 @@ const fadeKeyframes = [
   },
   {
     opacity: 0
-  },
-]
+  }
+];
 
 /** @type {Object<string, Keyframe[]>} */
 export const animationsType = {
   slide: slideKeyframes,
   fade: fadeKeyframes
-}
+};

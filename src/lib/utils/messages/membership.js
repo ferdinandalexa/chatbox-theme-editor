@@ -1,4 +1,4 @@
-function membership() {
+export function membership () {
   return `
   <yt-live-chat-membership-item-renderer class="style-scope yt-live-chat-item-list-renderer" whole-message-clickable=""
   id="Ci8KLUNKeWVyczdGeVAwQ0ZkYnQ0d2NkU19nUHlnLUxveU1lc0lELTMzNjA2MjUzMw%3D%3D" has-primary-header-text="">
@@ -35,7 +35,7 @@ function membership() {
             <div id="header-subtext" class="style-scope yt-live-chat-membership-item-renderer">⭐ ORO</div>
           </div>
 
-          <div id="timestamp" class="style-scope yt-live-chat-membership-item-renderer">7:31 PM</div>
+          <div id="timestamp" class="style-scope yt-live-chat-membership-item-renderer">7:31 PM</div>
         </div>
       </div>
 
@@ -47,5 +47,5 @@ function membership() {
       
     </div>
   </yt-live-chat-membership-item-renderer>
-  `
+  `;
 }

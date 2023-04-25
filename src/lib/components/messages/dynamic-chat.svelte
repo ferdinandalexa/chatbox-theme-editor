@@ -1,14 +1,14 @@
 <script>
-  import { getContext, onDestroy } from "svelte";
-  import { storeKeys } from "$lib/stores/chat-styles";
+  import { getContext, onDestroy } from 'svelte';
+  import { storeKeys } from '$lib/stores/chat-styles';
 
-  import { getRandomNumber } from "$lib/utils/getRandomNumber";
+  import { getRandomNumber } from '$lib/utils/getRandomNumber';
 
-  import { animate } from "$lib/actions/animate";
+  import { animate } from '$lib/actions/animate';
 
-  import RegularMessage from "$lib/components/messages/regular-message.svelte";
-  import Sponsor from "$lib/components/messages/sponsor.svelte";
-  import Superchat from "$lib/components/messages/superchat.svelte";
+  import RegularMessage from '$lib/components/messages/regular-message.svelte';
+  import Sponsor from '$lib/components/messages/sponsor.svelte';
+  import Superchat from '$lib/components/messages/superchat.svelte';
 
   const animation = getContext(storeKeys.animation);
   const timing = getContext(storeKeys.time);
@@ -19,38 +19,38 @@
   /** @type {Array<ListTypeMessages>}   */
   const messagesType = [
     {
-      component: RegularMessage,
+      component: RegularMessage
     },
     {
       component: RegularMessage,
       props: {
-        authorType: "owner",
-      },
+        authorType: 'owner'
+      }
     },
     {
       component: RegularMessage,
       props: {
-        authorType: "moderator",
-      },
+        authorType: 'moderator'
+      }
     },
     {
       component: RegularMessage,
       props: {
-        authorType: "member",
-      },
+        authorType: 'member'
+      }
     },
     {
-      component: Sponsor,
+      component: Sponsor
     },
     {
-      component: Superchat,
-    },
+      component: Superchat
+    }
   ];
-  /**@type {Array<ListTypeMessages>}*/
+  /** @type {Array<ListTypeMessages>} */
   let listOfMessages = [];
-  /**@type {AnimateProps}*/
+  /** @type {AnimateProps} */
   let animateOpts;
-  /** @type {number}*/
+  /** @type {number} */
   let intervalId;
 
   intervalId = setInterval(() => {
@@ -63,7 +63,7 @@
       type: $animation.type,
       hideOldMessages: $animation.hideOldMessages,
       duration: $timing.totalTime,
-      animationTimeRatio: $timing.animationTimeRatio,
+      animationTimeRatio: $timing.animationTimeRatio
     };
 
     listOfMessages = [];

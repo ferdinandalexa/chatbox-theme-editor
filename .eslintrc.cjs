@@ -1,15 +1,22 @@
 module.exports = {
-	root: true,
-	extends: ['eslint:recommended', './node_modules/semistandard/eslintrc.json'],
-	plugins: ['svelte3'],
-	overrides: [{ files: ['*.svelte'], processor: 'svelte3/svelte3' }],
-	parserOptions: {
-		sourceType: 'module',
-		ecmaVersion: 2020
-	},
-	env: {
-		browser: true,
-		es2017: true,
-		node: true
-	}
+  root: true,
+  extends: [
+    'plugin:svelte/recommended',
+    './node_modules/eslint-config-semistandard/eslintrc.json'
+  ],
+  plugins: ['svelte3'],
+  ignorePatterns: ['static', '*-lock.json'],
+  overrides: [{
+    files: ['*.svelte'],
+    parser: 'svelte-eslint-parser'
+  }],
+  parserOptions: {
+    sourceType: 'module',
+    ecmaVersion: 2021
+  },
+  env: {
+    browser: true,
+    es2017: true,
+    node: true
+  }
 };

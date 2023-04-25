@@ -1,4 +1,4 @@
-export function Superchat() {
+export function Superchat () {
   return `
     <yt-live-chat-paid-message-renderer style="color: #fff">
 
@@ -19,5 +19,5 @@ export function Superchat() {
       </div>
       
     </yt-live-chat-paid-message-renderer>
-  `
+  `;
 }

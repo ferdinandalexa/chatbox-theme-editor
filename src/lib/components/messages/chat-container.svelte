@@ -1,5 +1,5 @@
 <script>
-  import Root from "$lib/components/messages/root.svelte";
+  import Root from '$lib/components/messages/root.svelte';
 </script>
 
 <Root>

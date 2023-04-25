@@ -1,15 +1,15 @@
 <script>
-  import { onMount, setContext } from "svelte";
+  import { onMount, setContext } from 'svelte';
   import {
     animationStyles,
     generalStyles,
     regularMessageStyles,
     sponsorStyles,
     timing,
-    storeKeys,
-  } from "$lib/stores/chat-styles";
-  import CustomizationPanel from "$lib/components/panels/customization/customization-panel.svelte";
-  import PreviewPanel from "$lib/components/panels/preview-panel.svelte";
+    storeKeys
+  } from '$lib/stores/chat-styles';
+  import CustomizationPanel from '$lib/components/panels/customization/customization-panel.svelte';
+  import PreviewPanel from '$lib/components/panels/preview-panel.svelte';
 
   setContext(storeKeys.general, generalStyles);
   setContext(storeKeys.regularMessage, regularMessageStyles);
@@ -19,8 +19,8 @@
 
   onMount(() => {
     Coloris({
-      el: ".coloris",
-      themeMode: "dark",
+      el: '.coloris',
+      themeMode: 'dark'
     });
   });
 </script>

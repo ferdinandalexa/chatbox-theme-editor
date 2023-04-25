@@ -1,9 +1,9 @@
 <script>
-  import "./input.css";
+  import './input.css';
 
-  /**@type {boolean}*/
+  /** @type {boolean} */
   export let value;
-  export let label = "field";
+  export let label = 'field';
 
   $: isChecked = value;
 </script>

@@ -1,7 +1,7 @@
 /**
  * @return {string}
 */
-export function Sponsor() {
+export function Sponsor () {
   return `
     <yt-live-chat-legacy-paid-message-renderer>
 
@@ -17,5 +17,5 @@ export function Sponsor() {
       </div>
       
     </yt-live-chat-legacy-paid-message-renderer>  
-  `
+  `;
 }

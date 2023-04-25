@@ -1,25 +1,25 @@
 <script>
-  import { compressCSS } from "$lib/utils/compressCSS";
+  import { compressCSS } from '$lib/utils/compressCSS';
   import {
     generalStyles,
     regularMessageStyles,
     sponsorStyles,
     animationStyles,
-    timing,
-  } from "$lib/stores/chat-styles";
-  import { generateChatStyles } from "$lib/utils/generateChatStyles";
-  import ChatContainer from "$lib/components/messages/chat-container.svelte";
-  import DynamicChat from "$lib/components/messages/dynamic-chat.svelte";
-  import StaticChat from "../messages/static-chat.svelte";
+    timing
+  } from '$lib/stores/chat-styles';
+  import { generateChatStyles } from '$lib/utils/generateChatStyles';
+  import ChatContainer from '$lib/components/messages/chat-container.svelte';
+  import DynamicChat from '$lib/components/messages/dynamic-chat.svelte';
+  import StaticChat from '../messages/static-chat.svelte';
 
-  /**@type {HTMLButtonElement}*/
+  /** @type {HTMLButtonElement} */
   let button;
   let isCopied = false;
   let chatSimulationEnabled = false;
-  /**@type {number}*/
+  /** @type {ReturnType<typeof setTimeout>} */
   let timeoutId;
 
-  async function handleCopy() {
+  async function handleCopy () {
     if (timeoutId) {
       clearTimeout(timeoutId);
     }
@@ -34,7 +34,7 @@
     });
   }
 
-  async function copyStyles() {
+  async function copyStyles () {
     try {
       const chatStyles = generateChatStyles(
         $generalStyles,
@@ -46,7 +46,7 @@
       await navigator.clipboard.writeText(compressCSS(chatStyles));
       await handleCopy();
     } catch (err) {
-      console.error("Error copying text: ", err);
+      console.error('Error copying text: ', err);
     }
   }
 </script>
@@ -60,7 +60,7 @@
           chatSimulationEnabled = !chatSimulationEnabled;
         }}
       >
-        {chatSimulationEnabled ? "Disable Live Chat" : "Enable Live Chat"}
+        {chatSimulationEnabled ? 'Disable Live Chat' : 'Enable Live Chat'}
       </button>
     </li>
     <li>
@@ -71,7 +71,7 @@
           copyStyles();
         }}
       >
-        {isCopied ? "Copied to clipboard!" : "Copy styles"}
+        {isCopied ? 'Copied to clipboard!' : 'Copy styles'}
       </button>
     </li>
   </menu>

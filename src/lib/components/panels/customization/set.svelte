@@ -1,14 +1,14 @@
 <script>
-  import SubSet from "$lib/components/panels/customization/sub-set.svelte";
+  import SubSet from '$lib/components/panels/customization/sub-set.svelte';
 
-  export let name = "Panel name";
+  export let name = 'Panel name';
   export let disabled = false;
 
-  /**@type {Symbol | undefined}*/
+  /** @type {Symbol | undefined} */
   export let storeKey;
 
   /** @typedef {import('$lib/types/fields').Fields} Fields */
-  /**@type {Array<Fields>} */
+  /** @type {Array<Fields>} */
   export let fields = [];
 </script>
 

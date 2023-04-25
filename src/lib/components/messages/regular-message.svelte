@@ -1,6 +1,6 @@
 <script>
   /** @typedef {import('$lib/types/messages').AUTHOR_TYPES | null } AuthorType */
-  /**@type {AuthorType}*/
+  /** @type {AuthorType} */
   export let authorType = null;
 </script>
 
@@ -38,7 +38,7 @@
     </yt-live-chat-author-chip>
 
     <span class="message">
-      This is how it looks like a {authorType ?? ""} user message.
+      This is how it looks like a {authorType ?? ''} user message.
     </span>
   </div>
 </yt-live-chat-text-message-renderer>

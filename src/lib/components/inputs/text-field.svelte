@@ -1,16 +1,16 @@
 <script>
-  import "./input.css";
+  import './input.css';
 
-  /**@type {("text" | "number")}*/
-  export let type = "text";
+  /** @type {("text" | "number")} */
+  export let type = 'text';
 
-  /**@type {number | string}*/
+  /** @type {number | string} */
   export let value;
 
-  export let label = "field";
+  export let label = 'field';
 
-  /**@param {HTMLInputElement} node*/
-  function typeInput(node) {
+  /** @param {HTMLInputElement} node */
+  function typeInput (node) {
     node.type = type;
   }
 </script>

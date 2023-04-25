@@ -1,12 +1,12 @@
-import { RegularMessage } from "$lib/utils/messages/regular-message";
-import { Sponsor } from "$lib/utils/messages/sponsor";
-import { Superchat } from "$lib/utils/messages/superchat";
+import { RegularMessage } from '$lib/utils/messages/regular-message';
+import { Sponsor } from '$lib/utils/messages/sponsor';
+import { Superchat } from '$lib/utils/messages/superchat';
 
 /**
  * @param {string} css
  * @return {string}
 */
-export function generateChatHTML(css) {
+export function generateChatHTML (css) {
   return `
   <!DOCTYPE html>
   <html lang="en">

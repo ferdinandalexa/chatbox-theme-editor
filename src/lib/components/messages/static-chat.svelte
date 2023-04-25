@@ -1,7 +1,7 @@
 <script>
-  import RegularMessage from "$lib/components/messages/regular-message.svelte";
-  import Sponsor from "$lib/components/messages/sponsor.svelte";
-  import Superchat from "$lib/components/messages/superchat.svelte";
+  import RegularMessage from '$lib/components/messages/regular-message.svelte';
+  import Sponsor from '$lib/components/messages/sponsor.svelte';
+  import Superchat from '$lib/components/messages/superchat.svelte';
 </script>
 
 <RegularMessage />

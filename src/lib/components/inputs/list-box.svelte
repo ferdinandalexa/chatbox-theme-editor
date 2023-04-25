@@ -1,26 +1,26 @@
 <script>
-  import { createEventDispatcher } from "svelte";
-  import { createListbox } from "svelte-headlessui";
+  import { createEventDispatcher } from 'svelte';
+  import { createListbox } from 'svelte-headlessui';
 
   const dispatch = createEventDispatcher();
 
-  export let value = "";
-  export let label = "Field";
+  export let value = '';
+  export let label = 'Field';
   export let reset = false;
 
-  /**@type {string[]} */
+  /** @type {string[]} */
   export let options = [];
 
   const listbox = createListbox({
-    label: "show type",
-    selected: options[0],
+    label: 'show type',
+    selected: options[0]
   });
 
-  /**@param {CustomEvent} event*/
-  function handleSelect(event) {
+  /** @param {CustomEvent} event */
+  function handleSelect (event) {
     value = event.detail.selected;
-    dispatch("input", {
-      value,
+    dispatch('input', {
+      value
     });
   }
 

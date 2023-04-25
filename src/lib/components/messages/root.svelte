@@ -1,6 +1,6 @@
 <script>
-  import { getContext } from "svelte";
-  import { storeKeys } from "$lib/stores/chat-styles";
+  import { getContext } from 'svelte';
+  import { storeKeys } from '$lib/stores/chat-styles';
 
   const generalStyles = getContext(storeKeys.general);
   const regularMessage = getContext(storeKeys.regularMessage);

@@ -1,14 +1,14 @@
 <script>
-  import { storeKeys } from "$lib/stores/chat-styles";
+  import { storeKeys } from '$lib/stores/chat-styles';
   import {
     generalFields,
     regularMessageFields,
     sponsorFields,
     superchatFields,
     membershipFields,
-    animationFields,
-  } from "$lib/stores/initialValues";
-  import Set from "$lib/components/panels/customization/set.svelte";
+    animationFields
+  } from '$lib/stores/initialValues';
+  import Set from '$lib/components/panels/customization/set.svelte';
 </script>
 
 <div class="customization-panel">

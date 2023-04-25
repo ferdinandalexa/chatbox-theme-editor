@@ -4,7 +4,7 @@
  * @param {AuthorType} [authorType]
  * @return {string}
 */
-export function RegularMessage(authorType) {
+export function RegularMessage (authorType) {
   return `
   <yt-live-chat-text-message-renderer author-type=${authorType ?? ''}>
     
@@ -37,5 +37,5 @@ export function RegularMessage(authorType) {
     </div>
     
   </yt-live-chat-text-message-renderer>
-  `
+  `;
 }
