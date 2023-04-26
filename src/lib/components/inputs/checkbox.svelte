@@ -9,7 +9,6 @@
 </script>
 
 <label class="label checkbox" class:isChecked>
-  <!-- <span class="box" /> -->
   <input
     type="checkbox"
     class="input"
