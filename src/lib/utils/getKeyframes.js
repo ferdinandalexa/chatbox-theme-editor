@@ -1,4 +1,4 @@
-import { animationsType } from '$lib/consts/animations/animationsType';
+import { animationsType } from '../consts/animations/animationsType';
 
 /**
  * @param {string} type
