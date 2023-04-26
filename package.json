@@ -21,7 +21,7 @@
 		"postcss-html": "1.5.0",
 		"semistandard": "16.0.1",
 		"stylelint-config-html": "1.1.0",
-		"stylelint-config-idiomatic-order": "^8.1.0",
+		"stylelint-config-idiomatic-order": "8.1.0",
 		"svelte": "^3.54.0",
 		"svelte-check": "^3.0.1",
 		"typescript": "^5.0.0",
