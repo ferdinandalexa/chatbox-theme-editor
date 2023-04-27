@@ -40,10 +40,12 @@ export function getCSSKeyframes (type, animationTimeRatio, hideOldMessages) {
     : [0, 1];
 
   const animationSelected = animationsType[type] ?? [];
+  console.log(animationSelected);
 
   if (animationSelected.length > 0) {
     return steps.map((step, index) => {
-      return `${step * 100}%{${Object.entries(animationsType.fade[index]).map((rule) => { return rule.join(': '); }).join(';')};}`;
+      const CSSPropertiesMap = Object.entries(animationSelected[index]).map((rule) => { return rule.join(': '); }).join(';');
+      return `${step * 100}%{${CSSPropertiesMap};}`;
     }).join('');
   }
 

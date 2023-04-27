@@ -73,6 +73,14 @@ test('Return CSS Keyframes with 4 steps', () => {
   expect(keyframes).toBe(expectedKeyframes);
 });
 
+test('Return CSS Keyframes with multiple CSS Properties', () => {
+  const expectedKeyframes = '0%{opacity: 0;transform: translateX(16px);}100%{opacity: 1;transform: none;}';
+
+  const keyframes = getCSSKeyframes('slide', 1, false);
+
+  expect(keyframes).toBe(expectedKeyframes);
+});
+
 test('No animation type matches (CSS)', () => {
   const expectedKeyframes = '';
 
