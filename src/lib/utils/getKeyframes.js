@@ -44,8 +44,11 @@ export function getCSSKeyframes (type, animationTimeRatio, hideOldMessages) {
 
   if (animationSelected.length > 0) {
     return steps.map((step, index) => {
-      const CSSPropertiesMap = Object.entries(animationSelected[index]).map((rule) => { return rule.join(': '); }).join(';');
-      return `${step * 100}%{${CSSPropertiesMap};}`;
+      const CSSPropsEntries = Object.entries(animationSelected[index]);
+      const CSSEntriesFormated = CSSPropsEntries.map((rule) => { return `${rule.join(': ')};`; });
+      const CSSRules = CSSEntriesFormated.join('');
+
+      return `${step * 100}%{${CSSRules}}`;
     }).join('');
   }
 
