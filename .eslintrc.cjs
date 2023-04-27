@@ -4,7 +4,6 @@ module.exports = {
     'plugin:svelte/recommended',
     './node_modules/eslint-config-semistandard/eslintrc.json'
   ],
-  plugins: ['svelte3'],
   ignorePatterns: ['static', '*-lock.json'],
   overrides: [{
     files: ['*.svelte'],
