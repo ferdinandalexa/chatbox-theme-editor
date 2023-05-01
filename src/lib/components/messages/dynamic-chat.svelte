@@ -1,5 +1,5 @@
 <script>
-  import { onDestroy } from 'svelte';
+  import { onDestroy, onMount } from 'svelte';
   import { storeKeys, styleStores } from '$lib/stores/chat-styles';
 
   import { getRandomNumber } from '$lib/utils/getRandomNumber';
@@ -68,6 +68,11 @@
 
     listOfMessages = [];
   }
+
+  onMount(() => {
+    const randomIndex = getRandomNumber(0, messagesType.length - 1);
+    listOfMessages = [messagesType[randomIndex]];
+  });
 
   onDestroy(() => {
     clearInterval(intervalId);
