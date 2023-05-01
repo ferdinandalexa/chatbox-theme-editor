@@ -81,4 +81,21 @@ const storeKeys = {
   time: Symbol('animation time')
 };
 
-export { generalStyles, regularMessageStyles, sponsorStyles, animationStyles, timing, storeKeys };
+/** @type {Object<symbol, Object>} */
+const styleStores = {
+  [storeKeys.general]: generalStyles,
+  [storeKeys.regularMessage]: regularMessageStyles,
+  [storeKeys.sponsor]: sponsorStyles,
+  [storeKeys.animation]: animationStyles,
+  [storeKeys.time]: timing
+};
+
+export {
+  styleStores,
+  storeKeys,
+  generalStyles,
+  regularMessageStyles,
+  sponsorStyles,
+  animationStyles,
+  timing
+};

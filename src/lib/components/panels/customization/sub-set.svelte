@@ -1,10 +1,9 @@
 <script>
-  import { getContext } from 'svelte';
-
   import Checkbox from '$lib/components/inputs/checkbox.svelte';
   import ColorPicker from '$lib/components/inputs/color-picker.svelte';
   import TextField from '$lib/components/inputs/text-field.svelte';
   import ListBox from '$lib/components/inputs/list-box.svelte';
+  import { styleStores } from '$lib/stores/chat-styles';
 
   export let name = 'Sub set';
 
@@ -12,10 +11,10 @@
   /** @type {Array<Input>} */
   export let inputs = [];
 
-  /** @type {Symbol | null} */
-  export let storeKey = null;
+  /** @type {symbol} */
+  export let storeKey;
 
-  const stylesStore = getContext(storeKey);
+  const stylesStore = styleStores[storeKey];
 
   const nameFormated = name.toLowerCase().split(' ').join('-');
 

@@ -4,7 +4,7 @@
   export let name = 'Panel name';
   export let disabled = false;
 
-  /** @type {Symbol | undefined} */
+  /** @type {symbol} */
   export let storeKey;
 
   /** @typedef {import('$lib/types/fields').Fields} Fields */

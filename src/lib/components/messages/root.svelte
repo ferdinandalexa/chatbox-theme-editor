@@ -1,11 +1,10 @@
 <script>
-  import { getContext } from 'svelte';
-  import { storeKeys } from '$lib/stores/chat-styles';
+  import { storeKeys, styleStores } from '$lib/stores/chat-styles';
 
-  const generalStyles = getContext(storeKeys.general);
-  const regularMessage = getContext(storeKeys.regularMessage);
-  const sponsor = getContext(storeKeys.sponsor);
-  const animation = getContext(storeKeys.animation);
+  const generalStyles = styleStores[storeKeys.general];
+  const regularMessage = styleStores[storeKeys.regularMessage];
+  const sponsor = styleStores[storeKeys.sponsor];
+  const animation = styleStores[storeKeys.animation];
 </script>
 
 <div

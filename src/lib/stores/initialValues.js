@@ -266,4 +266,11 @@ const animationFields = [
   }
 ];
 
-export { generalFields, regularMessageFields, sponsorFields, superchatFields, membershipFields, animationFields };
+export {
+  generalFields,
+  regularMessageFields,
+  sponsorFields,
+  superchatFields,
+  membershipFields,
+  animationFields
+};
