@@ -53,6 +53,11 @@
   /** @type {ReturnType<typeof setTimeout>} */
   let intervalId;
 
+function initiallizeListMesssages () {
+  const randomIndex = getRandomNumber(0, messagesType.length - 1);
+  listOfMessages = [messagesType[randomIndex]];
+}
+
   intervalId = setInterval(() => {
     const randomIndex = getRandomNumber(0, messagesType.length - 1);
     listOfMessages = [...listOfMessages, messagesType[randomIndex]];
@@ -67,11 +72,11 @@
     };
 
     listOfMessages = [];
+    initiallizeListMesssages();
   }
 
   onMount(() => {
-    const randomIndex = getRandomNumber(0, messagesType.length - 1);
-    listOfMessages = [messagesType[randomIndex]];
+    initiallizeListMesssages();
   });
 
   onDestroy(() => {
